@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Map</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.30/"></script>
+</head>
+<body>
+    <h1>Abu Dhabi Parking Map</h1>
+    <div id="mapViewDiv" style="width: 100%; height: 80vh;"></div>
+    <script>
+        require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], function(Map, MapView, FeatureLayer) {
+            const map = new Map({
+                basemap: "streets"
+            });
+
+            const view = new MapView({
+                container: "mapViewDiv",
+                map: map,
+                center: [54.38, 24.45], // Coordinates of Abu Dhabi
+                zoom: 12
+            });
+
+            const parkingLayer = new FeatureLayer({
+                url: "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/91",
+                popupTemplate: {
+                    title: "{PARKING_NAME}", // Adjust field names to match data
+                    content: `
+                        <p><b>Address:</b> {ADDRESS}</p>
+                        <p><b>Capacity:</b> {CAPACITY}</p>
+                        <p><b>Available:</b> {AVAILABLE}</p>
+                    `
+                }
+            });
+            map.add(parkingLayer);
+        });
+    </script>
+</body>
+</html>
