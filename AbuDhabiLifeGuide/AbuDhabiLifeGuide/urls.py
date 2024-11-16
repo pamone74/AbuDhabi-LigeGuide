@@ -15,9 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+# myproject/urls.py (or your main project URL file)
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from SmartRoute import views  # Import your views
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('map/', views.map_view, name='home'),
+    path('', views.home, name='home'),
+    path('SmartRoute/', include('SmartRoute.urls'))
 ]
+
