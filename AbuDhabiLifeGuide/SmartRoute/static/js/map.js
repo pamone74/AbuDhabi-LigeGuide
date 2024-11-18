@@ -1,4 +1,3 @@
-
 // Initialize the map with a default view in case location is unavailable
 var map = L.map('map').setView([23.821077, 54.319628], 8);  // Centered around Abu Dhabi
 

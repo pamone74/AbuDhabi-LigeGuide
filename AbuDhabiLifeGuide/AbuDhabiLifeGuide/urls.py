@@ -23,12 +23,9 @@ from SmartRoute import views  # Import your views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
     path('map/', views.map_view, name='home'),
     path('', views.home, name='home'),
-=======
      path('', views.map_view, name='home'),
->>>>>>> refs/remotes/origin/main
     path('SmartRoute/', include('SmartRoute.urls'))
 ]
 
