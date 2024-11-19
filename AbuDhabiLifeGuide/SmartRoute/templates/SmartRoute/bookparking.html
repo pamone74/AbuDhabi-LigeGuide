@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <h1>Book Parking Slot</h1>
+
+    <p> Please not that </p> 
+    <ol>
+        <li> For Free parking pulic places, Your booking will be valid for only 30 Mins from Booking time. </li>
+        <li> For Paid Parking you need to pay before booking, standard charges applies </li>
+    </ol>
+
+    <!-- Add CSRF Token -->
+    <form method="post" style="display: none;">
+        {% csrf_token %}
+    </form>
+
+    <div id="map" style="height: 100vh;"></div>
+
+    <script>
+        var map = L.map('map').setView([24.133221, 55.695977], 13);  // Center the map to the first spot
+
+        // Add a tile layer to the map (OpenStreetMap in this case)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add markers for each parking spot
+        var spots = {{ spots|safe }};
+
+        spots.forEach(function(spot) {
+            var color = spot.booked ? 'red' : 'green';  // Red if booked, green if available
+
+            // Add a circle marker
+            var marker = L.circleMarker([spot.latitude, spot.longitude], {
+                radius: 8, // Size of the circle
+                fillColor: color, // Fill color
+                color: 'white', // Border color
+                weight: 2, // Border width
+                opacity: 1,
+                fillOpacity: 0.5 // Fill opacity
+            }).addTo(map);
+
+            var popupContent = `
+                <b>Spot ${spot.spot_id}</b><br>
+                Latitude: ${spot.latitude}<br>
+                Longitude: ${spot.longitude}<br>
+                <button onclick="bookSpot(${spot.spot_id})" ${spot.booked ? 'disabled' : ''}>Book Spot</button>
+            `;
+            marker.bindPopup(popupContent);
+        });
+
+        // Function to handle booking a spot
+        function bookSpot(spotId) {
+            // Send a POST request to book the spot
+            fetch(`http://127.0.0.1:8000/book_parking_spot/${spotId}/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Parking spot booked successfully!');
+                    location.reload();  // Reload the page to reflect the booking
+                } else {
+                    alert('Error booking the spot!');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,23 +1,12 @@
 from django.db import models
 
-class ParkingData(models.Model):
-    location = models.CharField(max_length=255)
-    available_spaces = models.IntegerField()
-    latitude = models.FloatField()
-    longitude = models.FloatField()
-    timestamp = models.DateTimeField(auto_now_add=True)
+from django.db import models
 
-class HealthCenter(models.Model):
-    name = models.CharField(max_length=255)
-    services = models.TextField()
-    rating = models.FloatField()
-    insurance_providers = models.TextField()
-    location = models.CharField(max_length=255)
-    latitude = models.FloatField()
-    longitude = models.FloatField()
+class ParkingSpot(models.Model):
+    spot_id = models.AutoField(primary_key=True)  # Unique ID for each spot
+    latitude = models.FloatField()  # Latitude of the spot
+    longitude = models.FloatField()  # Longitude of the spot
+    booked = models.BooleanField(default=False)  # Whether the spot is booked
 
-class EventData(models.Model):
-    name = models.CharField(max_length=255)
-    location = models.CharField(max_length=255)
-    date = models.DateTimeField()
-    category = models.CharField(max_length=255)
+    def __str__(self):
+        return f"Spot {self.spot_id} ({self.latitude}, {self.longitude})"

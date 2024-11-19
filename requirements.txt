@@ -1,5 +1,4 @@
 django
-pandas 
-scikit-learn
-requests
-gunicorn
+pandas scikit-learn requests
+requests gunicorn
+pip install openai==0.28
