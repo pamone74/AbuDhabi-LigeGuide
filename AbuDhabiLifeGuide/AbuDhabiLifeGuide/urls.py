@@ -24,11 +24,7 @@ from SmartRoute import views  # Import your views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    # path('', views.home, name='home'),
-    # path('worship_places/', views.worship_places, name='worship_places'),
-    # path('tourist-map/', views.tourist, name='tourist_map'),
     path('SmartRoute/', include('SmartRoute.urls')),
-    # path('recommend/<str:category>/', views.recommend_places, name="recommend_places"),
     path("recommend-worship-church/", views.recommend_worship_church, name="recommend_worship_church"),
     path("recommend-worship-mosque/", views.recommend_worship_mosque, name="recommend_worship_mosque"),
     path("recommend-shopping-places/", views.recommend_shopping_places, name="shopping"),
