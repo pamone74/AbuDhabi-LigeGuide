@@ -1,74 +1,57 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worship Places</title>
+    <title>Shop</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: row;
-            height: 100vh;
-        }
-
-        .map-container {
-            flex: 2;
-            border-right: 1px solid #ddd;
-        }
-
-        .map {
-            height: 100%;
-            width: 100%;
-        }
-
-        .form-container {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        button {
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        h2 {
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/map.css' %}">
 </head>
 <body>
-    <h1>Shopping</h1>
+    <section id="header" class="header">
+        <div class="header-container"><a href="{% url 'home' %}" target="_self" aria-current="page"
+                class="link-block-2 w-inline-block w--current"><img src="static/images/logo.png" loading="lazy"
+                    width="33" sizes="(max-width: 479px) 28vw, 38px" alt=""
+                    srcset="{% static 'images/logo.png' %} 500w, {% static 'images/logo.png' %} 800w, {% static 'images/logo.png' %} 1080w, {% static 'images/logo.png' %} 1600w"
+                    class="logo">
+                <h1 class="heading-14">LigeGuide</h1>
+            </a>
+            <div class="w-layout-hflex flex-block-3"><a href="{% url 'home' %}" target="_self"
+                    class="link-block w-inline-block">
+                    <p class="paragraph-11">HOME</p>
+                </a>
+                <a href="{% url 'recommend_worship_church' %}" target="_self" class="link-block w-inline-block">
+                    <p class="paragraph-11">WORSHIP PLACES</p>
+                </a><a href="{% url 'recommend_shopping_places' %}" target="_self" class="link-block w-inline-block">
+                    <p class="paragraph-11">SHOP</p>
+                </a><a href="{% url 'recommend_tourist_sites' %}" target="_self" class="link-block w-inline-block">
+                    <p class="paragraph-11">TOUR</p>
+                </a>
+                <a href="{% url 'event' %}" target="_self" class="link-block w-inline-block">
+                    <p class="paragraph-11">EVENTS</p>
+                </a>
+            </div>
+            <div class="div-block-13">
+                <img src="{% static 'images/menu.png' %}" loading="lazy"
+                    data-w-id="75d1cb73-5482-a4b1-c633-58b165bf6f53" alt="" class="image-8">
+                <div class="w-layout-hflex mobile-menu"><a href="#" class="link-block w-inline-block">
+                        <p class="paragraph-11">HOME</p>
+                    </a><a href="{% url 'recommend_worship_church' %}" target="_self" class="link-block w-inline-block">
+                        <p class="paragraph-11">Worship Places</p>
+                    </a><a href="{% url 'recommend_shopping_places' %}" target="_self"
+                        class="link-block w-inline-block">
+                        <p class="paragraph-11">SHOP</p>
+                    </a><a href="{% url 'recommend_tourist_sites' %}" target="_self" class="link-block w-inline-block">
+                        <p class="paragraph-11">TOUR</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
         <!-- Left Panel: Map -->
         <div class="map-container">
@@ -87,7 +70,7 @@
                 </select>
                 <label for="location_query">Search:</label>
                 <input type="text" name="location_query" id="location_query" placeholder="Enter keywords">
-                <button type="submit">Get Recommendations</button>
+                <button type="submit">Enter</button>
             </form>
 
             {% if recommendations %}

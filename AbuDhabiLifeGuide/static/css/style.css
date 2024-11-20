@@ -10,6 +10,8 @@ body {
   color: #000;
 }
 
+
+
 article,
 aside,
 details,
@@ -561,6 +563,7 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
   display: block;
+  color: #000;
 }
 
 .w-input,
@@ -1083,6 +1086,11 @@ textarea.w-select {
 .w-widget-map label {
   width: auto;
   display: inline;
+}
+
+#linkedin{
+  width: 5px;
+  height: 5px;
 }
 
 .w-widget-map img {
@@ -2313,7 +2321,7 @@ a {
 }
 
 .hero-container {
-  color: #000;
+  color: var(--light-blue);
   background-color: #fff;
   width: 100%;
   margin-top: 2px;
@@ -2323,7 +2331,7 @@ a {
 .div-block {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  background-image: linear-gradient(#111, #000);
+  background-image: linear-gradient(#fff, #f5f5f5);
   border: 1px solid #222;
   border-radius: 10px;
   flex-direction: column;
@@ -2372,7 +2380,7 @@ a {
 }
 
 .paragraph {
-  color: #fff;
+  color: #000;
 }
 
 .heading-2 {
@@ -2395,10 +2403,10 @@ a {
 }
 
 .heading-3 {
-  color: var(--white);
+  color: var(--black);
   text-transform: uppercase;
-  margin-top: 22px;
-  font-size: 32px;
+  margin-top: 20px;
+  font-size: 24px;
 }
 
 .grid-1 {
@@ -2426,12 +2434,14 @@ a {
 .heading-7,
 .heading-8,
 .heading-9 {
-  color: #fff;
+  color: #000;
 }
 
 .div-block-2 {
-  background-image: linear-gradient(#111, #fff0);
-  border: 1px solid #222;
+  color: --black;
+  background-image: linear-gradient(#f5f7fa, #f5f5f5);
+  border: 1px solid #c9c7c7;
+  box-shadow:#f5f7fa, #f3f3f3;
   border-radius: 10px;
   padding: 40px;
 }
@@ -2515,27 +2525,29 @@ a {
 }
 
 .heading-10 {
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   font-size: 24px;
 }
 
 .paragraph-8 {
-  color: #fff;
+  color: #000;
   font-size: 15px;
   font-weight: 400;
   overflow: visible;
 }
 
 .div-block-5 {
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  background-image: linear-gradient(#111, #fff0);
-  border: 1px solid #222;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  background-image: linear-gradient(#f5f7fa, #f5f5f5); 
+  border: 1px solid #c9c7c7; 
+  box-shadow:#f5f7fa, #f3f3f3;
   border-radius: 10px;
   flex-flow: row;
-  padding: 40px;
+  padding: 20px;
   display: flex;
+  margin-left: 5px;
   position: relative;
 }
 
@@ -2630,7 +2642,7 @@ a {
 }
 
 .link-block {
-  color: #fff;
+  color: #000;
   text-decoration: none;
   position: relative;
   bottom: 5px;
@@ -2644,7 +2656,7 @@ a {
 }
 
 .paragraph-11 {
-  color: #fff;
+  color: #000;
   margin-bottom: 0;
   font-size: 14px;
 }
@@ -2729,15 +2741,21 @@ a {
   position: relative;
 }
 
+.heading-180{
+  margin-bottom: 0;
+}
+
 .heading-18 {
-  color: #fff;
+  color: #010;
   text-align: left;
 }
 
 .div-block-8 {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  border: 1px solid #222;
+  background-image: linear-gradient(#f5f7fa, #f5f5f5);
+  border: 1px solid #c9c7c7;
+  box-shadow:#f5f7fa, #f3f3f3;
   border-radius: 10px;
   flex-direction: column;
   justify-content: flex-start;
@@ -2846,7 +2864,7 @@ a {
 .image-8 {
   filter: brightness(500%);
   cursor: pointer;
-  width: 32px;
+  width: 24px;
   display: none;
 }
 
@@ -2892,7 +2910,7 @@ a {
   border: 1px solid var(--ff0000);
   background-color: var(--ff0000);
   background-image: linear-gradient(90deg, var(--ff0000), #2f7efe);
-  color: #fff;
+  color: #000;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -2995,7 +3013,7 @@ a {
   background-color: #fff;
   flex-direction: column;
   align-items: center;
-  margin-top: -35px;
+  margin-top: -30px;
   display: flex;
   position: sticky;
   top: 0;
@@ -3027,14 +3045,6 @@ a {
 }
 
 .socials {
-  color: #000;
-  background-color: #fff;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-}
-
-.roadmap {
   color: #000;
   background-color: #fff;
   flex-direction: column;
@@ -3179,7 +3189,7 @@ a {
 .node {
   color: #000;
   background-color: #fff;
-  background-image: linear-gradient(#222, #111);
+  background-image: linear-gradient(#fff, #f5f5f5);
   border: 1px solid #222;
   border-top-color: #333;
   border-radius: 10px;
@@ -3487,7 +3497,7 @@ a {
 .token-box {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  background-image: linear-gradient(#111, #000);
+  background-image: linear-gradient(#fff, #f5f5f5);
   border: 1px solid #222;
   border-radius: 10px;
   flex-direction: column;
@@ -3528,7 +3538,7 @@ a {
 }
 
 .hero-heading {
-  color: #fff;
+  color: #000;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 30px;
@@ -3914,12 +3924,12 @@ a {
 }
 
 .hero-paragraph {
-  color: #fff;
+  color: #1b1818;
   text-align: left;
   flex: 0 auto;
   margin-bottom: 0;
   padding-top: 0;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.3;
   position: static;
 }
@@ -5421,7 +5431,9 @@ a {
 .div-block-8-copy {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  border: 1px solid #222;
+  background-image: linear-gradient(#f5f7fa, #f5f5f5); 
+  border: 1px solid #c9c7c7;
+  box-shadow:#f5f7fa, #f3f3f3;
   border-radius: 10px;
   flex-direction: column;
   justify-content: flex-start;
@@ -5587,7 +5599,7 @@ a {
 }
 
 .link-block-copy {
-  color: #fff;
+  color: #000;
   text-decoration: none;
   position: relative;
   bottom: 5px;
@@ -5656,13 +5668,13 @@ a {
 }
 
 .paragraph-2-copy {
-  color: #fff;
+  color: #000;
   font-size: 15px;
 }
 
 .paragraph-3-copy {
-  color: #fff;
-  background-color: #0000;
+  color: #000;
+  background-color: #fff;
   margin-top: 0;
   margin-bottom: 0;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -5674,13 +5686,13 @@ a {
 .paragraph-7-copy,
 .paragraph-5-copy,
 .paragraph-2-copy {
-  color: #fff;
+  color: #000;
   font-size: 15px;
 }
 
 .paragraph-3-copy {
-  color: #fff;
-  background-color: #0000;
+  color: #000;
+  background-color: #fff;
   margin-top: 0;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 15px;
@@ -5690,13 +5702,13 @@ a {
 .paragraph-7-copy,
 .paragraph-6-copy,
 .paragraph-5-copy {
-  color: #fff;
+  color: #000;
   font-size: 15px;
 }
 
 .paragraph-3-copy {
-  color: #fff;
-  background-color: #0000;
+  color: #000;
+  background-color: #fff;
   margin-top: 22px;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 17px;
@@ -5708,27 +5720,27 @@ a {
 }
 
 .paragraph-3-copy-copy {
-  color: #fff;
-  background-color: #0000;
+  color: #000;
+  background-color: #fff;
   margin-top: 0;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 15px;
 }
 
 .paragraph-5-copy-copy {
-  color: #fff;
+  color: #000;
   font-size: 15px;
 }
 
 .div-block-2-copy {
-  background-image: linear-gradient(#111, #fff0);
-  border: 1px solid #222;
+  background-image: linear-gradient(#fff, #f5f5f5);
+  border: 1px solid #fff;
   border-radius: 10px;
   padding: 40px;
 }
 
 .paragraph-6-copy-copy {
-  color: #fff;
+  color: #000;
   font-size: 15px;
 }
 
@@ -5743,15 +5755,15 @@ a {
 }
 
 .heading-3-copy {
-  color: var(--white);
+  color: var(--black);
   text-transform: uppercase;
   margin-top: 22px;
   font-size: 32px;
 }
 
 .paragraph-3-copy-copy {
-  color: #fff;
-  background-color: #0000;
+  color: #000;
+  background-color: #fff;
   margin-top: 22px;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 17.5px;
@@ -5769,7 +5781,7 @@ a {
 }
 
 .bold-text-17 {
-  color: #fff;
+  color: #000;
 }
 
 .paragraph-11-copy-copy {
@@ -5786,7 +5798,7 @@ a {
 }
 
 .paragraph-27-copy {
-  color: #fff;
+  color: #000;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -5815,7 +5827,7 @@ a {
 }
 
 .paragraph-28-copy {
-  color: #fff;
+  color: #000;
   flex-flow: column;
   justify-content: center;
   align-items: center;
@@ -6042,7 +6054,7 @@ a {
   }
 
   .paragraph-17 {
-    color: #fff;
+    color: #000;
     margin-bottom: 40px;
   }
 
@@ -6896,6 +6908,8 @@ a {
   }
 
   .heading-3 {
+    color: #000;
+    background-color: #fff;
     padding-top: 20px;
   }
 
@@ -7004,6 +7018,8 @@ a {
 
   .header-container {
     z-index: 100;
+    color: #000;
+    background-color: #fff;
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
@@ -7276,6 +7292,8 @@ a {
   }
 
   .heading-3-copy {
+    color: #000;
+    background-color: #fff;
     margin-top: 0;
     padding-top: 0;
   }
@@ -7654,6 +7672,8 @@ a {
   }
 
   .heading-3-copy {
+    color: #000;
+    background-color: #fff;
     padding-top: 20px;
   }
 

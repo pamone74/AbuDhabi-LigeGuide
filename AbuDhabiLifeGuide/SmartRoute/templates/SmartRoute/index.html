@@ -23,7 +23,7 @@
       </a>
       <div class="w-layout-hflex flex-block-3"><a href="#" class="link-block w-inline-block">
           <p class="paragraph-11">HOME</p>
-        </a><a href="{% url 'map_view' %}" target="_self" class="link-block w-inline-block">
+        </a><a href="{% url 'recommend_worship_church' %}" target="_self" class="link-block w-inline-block">
           <p class="paragraph-11">MAP</p>
         </a><a href="#team" target="_self" class="link-block w-inline-block">
           <p class="paragraph-11">TEAM</p>
@@ -37,7 +37,7 @@
           data-w-id="75d1cb73-5482-a4b1-c633-58b165bf6f53" alt="" class="image-8">
         <div class="w-layout-hflex mobile-menu"><a href="#" class="link-block w-inline-block">
             <p class="paragraph-11">HOME</p>
-          </a><a href="{% url 'map_view' %}" target="_self" class="link-block w-inline-block">
+          </a><a href="{% url 'recommend_worship_church' %}" target="_self" class="link-block w-inline-block">
             <p class="paragraph-11">MAP</p>
           </a><a href="#team" target="_self" class="link-block w-inline-block">
             <p class="paragraph-11">TEAM</p>
@@ -54,10 +54,10 @@
       <div class="w-layout-hflex flex-hero">
         <div class="hero-text">
           <h2 class="hero-heading">FIND ALL <br> SERVICES <span class="text-span"> IN ONE PLACE</span></h2>
-          <p class="hero-paragraph">Our curated software <br>Complex Algorithm & AI is able to suit your needs in
+          <p class="hero-paragraph">Our curated software's <br>Complex Algorithm & AI is able to suit your needs in
             one place. </p>
-          <div class="w-layout-hflex flex-block-2"><a href="#" target="_blank" class="button-2 w-button">MAPS</a><a
-              href="#" target="_blank" class="button-2-copy w-button">PLACES</a></div>
+          <div class="w-layout-hflex flex-block-2"><a href="{% url 'booking' %}" target="_self" class="button-2 w-button">BOOK PARKING</a><a
+            href="{% url 'recommend_tourist_sites' %}" target="_blank" class="button-2-copy w-button">PLACES</a></div>
         </div>
         <div
           data-poster-url="https://cdn.prod.website-files.com/652432e246a62d13320e3071/65e6b9c25e3c1e95d854c3b5_1-poster-00001.jpg"
@@ -67,8 +67,7 @@
             id="1897778b-9c25-881c-32c5-94b584d959b8-video" autoplay="" loop="" style="background-image:url(" https:=""
             cdn.prod.website-files.com="" 652432e246a62d13320e3071="" 65e6b9c25e3c1e95d854c3b5_1-poster-00001.jpg")"=""
             muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-            <source src="static/media/display.mp4" data-wf-ignore="true">
-            <source src="static/media/display.webm" data-wf-ignore="true">
+            <source src="{% static 'media/display.mp4' %}" data-wf-ignore="true">
           </video></div>
       </div>
     </div>
@@ -268,9 +267,9 @@
       <div class="div-block-10">
         <div class="w-layout-vflex">
           <h2 class="heading-3">HOW TO USE THE WEB APPLICATION</h2>
-          <p class="paragraph-17">Visit our page</p><img src="static/images/65fdc1f7774dc0d7f63e5d71_Untitled.png"
+          <p class="paragraph-17">Visit our page</p><img src="{ % static 'images/65fdc1f7774dc0d7f63e5d71_Untitled.png' %}"
             loading="lazy" width="650" height="510" alt=""
-            srcset="static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-500.png 500w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-800.png 800w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-1080.png 1080w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-1600.png 1600w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-2000.png 2000w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-2600.png 2600w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-3200.png 3200w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled.png 3382w"
+            srcset="{% static 'images/65fdc1f7774dc0d7f63e5d71_Untitled-p-500.png' %} 500w , static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-800.png 800w, {% static 'images/65fdc1f7774dc0d7f63e5d71_Untitled-p-1080.png' %}1080w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-1600.png 1600w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-2000.png 2000w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-2600.png 2600w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled-p-3200.png 3200w, static/images/65fdc1f7774dc0d7f63e5d71_Untitled.png 3382w"
             sizes="(max-width: 479px) 100vw, (max-width: 991px) 84vw, (max-width: 1439px) 52vw, 915.4750366210938px"
             class="image-12">
         </div>
@@ -294,7 +293,7 @@
           </div>
           <div id="w-node-cb534f2c-fa9b-3c93-f57e-6b256ca70218-320e3074"
             data-w-id="cb534f2c-fa9b-3c93-f57e-6b256ca70218" style="opacity:0" class="div-block-5"><img
-              src="static/images/65d8bb4cc1b07bfb51ef8f78_3.png" loading="lazy" alt="" class="image-11-copy">
+              src="{% static 'images/65d8bb4cc1b07bfb51ef8f78_3.png' %}" loading="lazy" alt="" class="image-11-copy">
             <div>
               <h3 class="heading-10">CONGRATS ...</h3>
               <p class="paragraph-8">Mision Completed.</p>
@@ -327,35 +326,24 @@
           <img
             src="static/images/661022ff429cda336944fb8e_Untitled.png" loading="lazy" width="33" alt="" class="logo">
           <h3 class="heading-18">Join our Telegram</h3>
+          <p>We are more than happy to communicate to any questions in our telegram channels</p>
           <a href="#" target="_blank" class="button-2 w-button">JOIN US </a>
         </div>
         <div data-w-id="adcd7662-4e6f-4106-68c6-3a87b5102740" style="opacity:0" class="div-block-8">
-          <img src="static/images/6610240866d8364112e0f643_X_logo.jpg" loading="lazy" width="33"
+          <img src="{% static 'images/6610240866d8364112e0f643_X_logo.jpg' %}" loading="lazy" width="33"
             sizes="(max-width: 479px) 100vw, 38px" alt=""
             srcset="static/images/6610240866d8364112e0f643_X_logo-p-500.jpg" 500w,
-            static/images/6610240866d8364112e0f643_X_logo-p-800.jpg 800w,
+            {% static 'images/6610240866d8364112e0f643_X_logo-p-800.jpg' %} 800w,
             static/images/6610240866d8364112e0f643_X_logo-p-1080.jpg 1080w,
             static/images/6610240866d8364112e0f643_X_logo.jpg 1200w" class="logo">
           <h3 class="heading-18">Follow us on X.com</h3>
+          <p>Feel free to contact us on Twitter / x.com</p>
           <a href="#" target="_blank" class="button-2 w-button">FOLLOW US</a>
         </div>
-        <div data-w-id="65700824-11df-46de-0028-f87010b5be32" style="opacity:0" class="div-block-8"><svg
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            preserveAspectRatio="xMinYMin meet" version="1.1" focusable="false" class="lazy-loaded" aria-busy="false">
-            <g class="scaling-icon" style="fill-opacity: 1">
-              <defs>
-              </defs>
-              <svg>
-                <g class="inbug" stroke="none" stroke-width="1" fill="#0000ff" fill-rule="evenodd">
-                  <path
-                    d="M19.479,0 L1.583,0 C0.727,0 0,0.677 0,1.511 L0,19.488 C0,20.323 0.477,21 1.333,21 L19.229,21 C20.086,21 21,20.323 21,19.488 L21,1.511 C21,0.677 20.336,0 19.479,0"
-                    class="bug-text-color" transform="translate(63.000000, 0.000000)"></path>
-                  <path
-                    d="M82.479,0 L64.583,0 C63.727,0 63,0.677 63,1.511 L63,19.488 C63,20.323 63.477,21 64.333,21 L82.229,21 C83.086,21 84,20.323 84,19.488 L84,1.511 C84,0.677 83.336,0 82.479,0 Z M71,8 L73.827,8 L73.827,9.441 L73.858,9.441 C74.289,8.664 75.562,7.875 77.136,7.875 C80.157,7.875 81,9.479 81,12.45 L81,18 L78,18 L78,12.997 C78,11.667 77.469,10.5 76.227,10.5 C74.719,10.5 74,11.521 74,13.197 L74,18 L71,18 L71,8 Z M66,18 L69,18 L69,8 L66,8 L66,18 Z M69.375,4.5 C69.375,5.536 68.536,6.375 67.5,6.375 C66.464,6.375 65.625,5.536 65.625,4.5 C65.625,3.464 66.464,2.625 67.5,2.625 C68.536,2.625 69.375,3.464 69.375,4.5 Z"
-                    class="background" fill="white"></path>
-                </g>
-              </svg>
-              <h3 class="heading-18">Follow us on LinkedIn</h3>
+        <div data-w-id="65700824-11df-46de-0028-f87010b5be32" style="opacity:0" class="div-block-8">
+          <img id="linkedin" src="{% static 'images/linkedin.png' %}" alt="LinkedIn" />
+              <h3 class="heading-18" >Follow us on LinkedIn</h3>
+              <p>Our LinkedIn ACCount is always updated with our recent information.</p>
               <a href="#" target="_blank" class="button-2 w-button">FOLLOW US</a>
         </div>
       </div>

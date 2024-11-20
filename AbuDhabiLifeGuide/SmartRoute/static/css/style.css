@@ -10,6 +10,8 @@ body {
   color: #000;
 }
 
+
+
 article,
 aside,
 details,
@@ -561,6 +563,7 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
   display: block;
+  color: #000;
 }
 
 .w-input,
@@ -1083,6 +1086,11 @@ textarea.w-select {
 .w-widget-map label {
   width: auto;
   display: inline;
+}
+
+#linkedin{
+  width: 5px;
+  height: 5px;
 }
 
 .w-widget-map img {
@@ -2395,7 +2403,7 @@ a {
 }
 
 .heading-3 {
-  color: var(--white);
+  color: var(--black);
   text-transform: uppercase;
   margin-top: 20px;
   font-size: 24px;
@@ -2733,6 +2741,10 @@ a {
   position: relative;
 }
 
+.heading-180{
+  margin-bottom: 0;
+}
+
 .heading-18 {
   color: #010;
   text-align: left;
@@ -3001,7 +3013,7 @@ a {
   background-color: #fff;
   flex-direction: column;
   align-items: center;
-  margin-top: -35px;
+  margin-top: -30px;
   display: flex;
   position: sticky;
   top: 0;
@@ -3033,14 +3045,6 @@ a {
 }
 
 .socials {
-  color: #000;
-  background-color: #fff;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-}
-
-.roadmap {
   color: #000;
   background-color: #fff;
   flex-direction: column;
@@ -3920,7 +3924,7 @@ a {
 }
 
 .hero-paragraph {
-  color: #000;
+  color: #1b1818;
   text-align: left;
   flex: 0 auto;
   margin-bottom: 0;
@@ -5751,7 +5755,7 @@ a {
 }
 
 .heading-3-copy {
-  color: var(--white);
+  color: var(--black);
   text-transform: uppercase;
   margin-top: 22px;
   font-size: 32px;
@@ -6904,6 +6908,8 @@ a {
   }
 
   .heading-3 {
+    color: #000;
+    background-color: #fff;
     padding-top: 20px;
   }
 
@@ -7286,6 +7292,8 @@ a {
   }
 
   .heading-3-copy {
+    color: #000;
+    background-color: #fff;
     margin-top: 0;
     padding-top: 0;
   }
@@ -7664,6 +7672,8 @@ a {
   }
 
   .heading-3-copy {
+    color: #000;
+    background-color: #fff;
     padding-top: 20px;
   }
 
