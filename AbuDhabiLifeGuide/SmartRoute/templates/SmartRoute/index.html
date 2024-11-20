@@ -13,41 +13,37 @@
   <link src="static/images/logo.png" rel="apple-touch-icon">
 </head>
 
-<body data-w-id="652432e246a62d13320e3077" class="body">
+<body class="body">
   <section id="header" class="header">
     <div class="header-container"><a href="/" aria-current="page" class="link-block-2 w-inline-block w--current"><img
           src="static/images/logo.png" loading="lazy" width="33" sizes="(max-width: 479px) 28vw, 38px" alt=""
-          srcset="static/images/logo.png 500w, static/images/logo.png 800w, logo.png 1080w, static/images/logo.png 1600w"
+          srcset="static/images/logo.png 500w, static/images/logo.png 800w, static/images/logo.png 1080w, static/images/logo.png 1600w"
           class="logo">
         <h1 class="heading-14">LigeGuide</h1>
       </a>
       <div class="w-layout-hflex flex-block-3"><a href="#" class="link-block w-inline-block">
           <p class="paragraph-11">HOME</p>
-        </a><a href="#" class="link-block w-inline-block">
+        </a><a href="{% url 'map_view' %}" target="_self" class="link-block w-inline-block">
           <p class="paragraph-11">MAP</p>
-        </a><a href="#team" class="link-block w-inline-block">
+        </a><a href="#team" target="_self" class="link-block w-inline-block">
           <p class="paragraph-11">TEAM</p>
-        </a><a href="#features" class="link-block w-inline-block">
+        </a><a href="#features" target="_self" class="link-block w-inline-block">
           <p class="paragraph-11">FEATURES</p>
-        </a><a href="#pricing" class="link-block w-inline-block">
-          <p class="paragraph-11">ABOUT US</p>
-        </a><a href="#socials" class="link-block w-inline-block">
+        </a><a href="#socials" target="_self" class="link-block w-inline-block">
           <p class="paragraph-11">SOCIALS</p>
         </a></div>
       <div class="div-block-13">
-        <img src="{% static 'images/65d7afd8f9c5f53209af77ad_menu.webp' %}" loading="lazy"
+        <img src="{% static 'images/menu.png' %}" loading="lazy"
           data-w-id="75d1cb73-5482-a4b1-c633-58b165bf6f53" alt="" class="image-8">
         <div class="w-layout-hflex mobile-menu"><a href="#" class="link-block w-inline-block">
             <p class="paragraph-11">HOME</p>
-          </a><a href="/host" target="_blank" class="link-block w-inline-block">
+          </a><a href="{% url 'map_view' %}" target="_self" class="link-block w-inline-block">
             <p class="paragraph-11">MAP</p>
-          </a><a href="#team" class="link-block w-inline-block">
+          </a><a href="#team" target="_self" class="link-block w-inline-block">
             <p class="paragraph-11">TEAM</p>
-          </a><a href="#features" class="link-block w-inline-block">
+          </a><a href="#features" target="_self" class="link-block w-inline-block">
             <p class="paragraph-11">FEATURES</p>
-          </a><a href="#pricing" class="link-block w-inline-block">
-            <p class="paragraph-11">ABOUT US</p>
-          </a><a href="#socials" class="link-block w-inline-block">
+          </a><a href="#socials" target="_self" class="link-block w-inline-block">
             <p class="paragraph-11">SOCIALS</p>
           </a></div>
       </div>
@@ -73,8 +69,7 @@
             muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
             <source src="static/media/display.mp4" data-wf-ignore="true">
             <source src="static/media/display.webm" data-wf-ignore="true">
-          </video></div><img src="static/images/65d7c61691bf106edd38bffa_rtx4090-2.png" loading="lazy" alt=""
-          class="image hide">
+          </video></div>
       </div>
     </div>
   </section>
@@ -170,8 +165,20 @@
       <h2 class="team-heading">SERVICES</h2>
       <div class="w-layout-grid grid-1">
         <div id="w-node-_9c0091ac-7c5d-c778-79f6-b499e054e3d3-320e3074" data-w-id="9c0091ac-7c5d-c778-79f6-b499e054e3d3"
-          style="opacity:0" class="div-block-2"><img src="{% static 'images/65d7abba5745fa7520012008_1.png' %}"
-            loading="lazy" alt="" class="image-2">
+          style="opacity:0" class="div-block-2">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="50px" height="50px" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="rgb(47, 66, 254)" stroke="none">
+            <path d="M4125 4539 c-17 -4 -46 -25 -65 -44 l-35 -36 -3 -455 c-3 -446 -2 -456 18 -489 40 -65 81 -75 298 -75 l192 0 0 -560 0 -559 -152 -3 c-150 -3 -153 -3 -156 -25 l-3 -23 345 0 346 0 0 25 0 25 -155 0 -155 0 0 559 0 560 208 3 209 3 37 29 c67 51 67 46 64 536 -3 425 -4 439 -24 467 -11 15 -40 38 -64 51 -44 22 -48 22 -460 21 -228 0 -429 -5 -445 -10z m901 -92 l24 -28 0 -424 0 -424 -24 -28 -24 -28 -414 -3 c-227 -1 -423 0 -436 3 -12 3 -31 14 -42 25 -19 19 -20 35 -20 453 l0 434 23 20 c12 11 29 23 37 26 8 3 203 5 433 4 l419 -2 24 -28z"/>
+            <path d="M4312 3993 l3 -338 58 -3 57 -3 0 136 0 135 93 0 c151 1 217 25 267 98 28 40 38 132 21 185 -15 43 -68 97 -113 113 -21 8 -100 13 -211 13 l-177 1 2 -337z m331 226 c59 -27 68 -116 18 -161 -30 -27 -36 -28 -131 -28 l-100 0 0 100 0 100 95 0 c52 0 105 -5 118 -11z"/>
+            <path d="M1665 3651 c-182 -6 -192 -7 -247 -34 -32 -15 -70 -45 -86 -65 -16 -20 -95 -156 -175 -302 l-146 -265 -183 -6 c-101 -3 -184 -6 -185 -7 -1 -1 -9 -15 -18 -32 -27 -53 -16 -191 18 -212 7 -4 58 -8 115 -8 56 0 102 -3 102 -6 0 -4 -31 -63 -70 -133 -159 -289 -155 -270 -155 -766 0 -396 0 -400 23 -450 28 -60 73 -109 127 -138 l40 -22 1513 -3 1513 -2 50 21 c66 29 134 105 154 172 12 41 15 118 15 406 0 199 -5 384 -11 420 -16 104 -45 176 -135 339 -46 84 -84 155 -84 157 0 3 49 5 110 5 l109 0 17 31 c12 24 15 52 12 111 -5 118 -5 118 -223 118 l-173 0 -147 269 c-81 148 -159 284 -175 303 -15 18 -52 47 -81 63 -53 29 -57 30 -254 36 -232 8 -1092 8 -1370 0z m1536 -141 c19 -5 47 -22 61 -37 34 -37 448 -793 448 -819 0 -11 -5 -25 -12 -32 -17 -17 -2679 -17 -2696 0 -7 7 -12 20 -12 31 0 15 351 668 422 784 11 18 34 43 51 55 30 22 44 23 272 29 343 9 1423 1 1466 -11z m-1921 -1189 c107 -51 205 -104 218 -117 28 -31 28 -64 1 -98 -19 -24 -26 -26 -96 -26 -142 0 -418 22 -443 35 -55 29 -83 71 -88 131 -6 72 15 115 72 150 67 41 109 32 336 -75z m2474 76 c78 -44 104 -144 57 -221 -38 -61 -73 -72 -268 -85 -250 -16 -306 -15 -334 8 -30 24 -32 83 -3 110 10 10 111 62 224 115 226 106 256 112 324 73z m-906 -896 c2 -67 -1 -108 -9 -117 -9 -12 -91 -14 -481 -14 -304 0 -476 4 -489 10 -17 10 -19 22 -19 114 0 56 3 106 7 109 3 4 227 6 497 5 l491 -3 3 -104z"/>
+            <path d="M2899 2853 c-50 -8 -132 -66 -160 -113 -15 -25 -30 -55 -34 -67 -6 -21 -3 -23 32 -23 35 0 41 4 56 34 35 74 130 113 210 87 38 -13 107 -81 107 -106 0 -11 11 -15 41 -15 40 0 41 1 34 28 -10 42 -51 99 -96 131 -36 26 -120 54 -152 50 -7 -1 -24 -4 -38 -6z"/>
+            <path d="M700 1008 c0 -95 4 -179 8 -186 7 -9 56 -12 213 -10 l204 3 3 152 3 151 -158 4 c-163 3 -163 3 -265 56 -5 2 -8 -74 -8 -170z"/>
+            <path d="M3935 1151 c-47 -24 -61 -26 -207 -29 l-158 -4 0 -141 c0 -78 4 -148 8 -155 7 -9 56 -12 213 -10 l204 3 3 183 c1 100 -1 181 -5 181 -5 -1 -30 -14 -58 -28z"/>
+            <path d="M215 759 c-110 -94 -201 -175 -203 -180 -2 -5 29 -9 70 -9 l73 0 180 180 180 180 -50 0 -50 0 -200 -171z"/>
+            <path d="M4366 750 l180 -181 77 3 78 3 -206 178 -206 177 -52 0 -52 0 181 -180z"/>
+            </g>
+            </svg>
           <h3 class="heading-5">PARKING & PUBLIC TRANSPORTATION</h3>
           <p class="paragraph-2-copy">Real-time tracking and availability updates. <br>
             Map view of the parking area. <br>
@@ -186,34 +193,68 @@
           </p>
         </div>
         <div id="w-node-ec4c58c7-98d0-3b42-f86f-8483a456d4b0-320e3074" data-w-id="ec4c58c7-98d0-3b42-f86f-8483a456d4b0"
-          style="opacity:0" class="div-block-2"><img src="static/images/65d7abbafc99808d31899120_6.png" loading="lazy"
-            alt="" class="image-2">
+          style="opacity:0" class="div-block-2">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="50px" height="50px" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="rgb(47, 66, 254)" stroke="none">
+            <path d="M3611 5104 c-150 -32 -293 -129 -379 -258 -229 -342 -69 -806 322 -932 103 -33 257 -38 351 -10 220 65 395 249 440 462 30 144 10 300 -57 427 -48 92 -173 213 -269 260 -130 64 -270 82 -408 51z"/>
+            <path d="M2596 4019 c-88 -10 -175 -52 -239 -116 -33 -33 -212 -312 -586 -913 -296 -476 -550 -888 -564 -915 -55 -109 -72 -189 -72 -335 0 -155 18 -229 86 -361 54 -104 120 -173 343 -363 l191 -161 -510 -5 c-369 -4 -520 -9 -547 -18 -55 -19 -149 -85 -186 -132 -44 -54 -80 -135 -93 -208 -38 -217 119 -440 341 -482 33 -6 449 -10 1134 -10 871 0 1091 3 1131 14 128 34 222 112 283 235 35 72 37 79 37 175 -1 114 -20 178 -77 255 -17 24 -221 203 -452 398 -232 196 -429 363 -439 373 -18 17 -7 39 294 601 172 321 316 588 320 593 5 5 37 -51 72 -125 35 -74 85 -177 110 -230 57 -117 107 -175 183 -214 75 -38 185 -46 263 -20 35 11 190 115 494 331 243 173 463 335 489 358 176 164 125 449 -101 555 -79 37 -192 37 -271 -1 -30 -14 -174 -111 -320 -215 l-265 -190 -159 311 c-87 171 -182 344 -210 385 -103 151 -261 295 -407 374 -104 56 -161 68 -273 56z"/>
+            </g>
+            </svg>
           <h3 class="heading-7">PLACES OF WORSHIP</h3>
           <p class="paragraph-5-copy">Mosque <br> Churches <br> Temples <br>‍</p>
         </div>
         <div id="w-node-_807369e7-07e2-7d77-7f2f-785f8528340d-320e3074" data-w-id="807369e7-07e2-7d77-7f2f-785f8528340d"
-          style="opacity:0" class="div-block-2"><img src="static/images/65d7abbac0ff2d275d770747_3.png" loading="lazy"
-            alt="" class="image-2">
+          style="opacity:0" class="div-block-2">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="50px" height="50px" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="rgb(47, 66, 254)" stroke="none">
+            <path d="M815 5107 c-83 -28 -150 -88 -186 -169 -8 -19 -23 -29 -58 -38 -121 -30 -249 -132 -308 -246 -64 -121 -65 -131 -60 -808 3 -536 6 -620 21 -686 94 -404 330 -718 677 -899 l96 -51 7 -94 c3 -52 15 -123 26 -158 46 -150 160 -267 313 -322 l62 -22 6 -419 c6 -467 7 -475 83 -641 220 -475 797 -688 1264 -464 259 124 432 326 518 605 l28 90 6 720 c7 782 5 756 65 891 82 185 261 337 458 390 78 21 96 19 103 -13 14 -59 69 -150 126 -209 276 -287 752 -150 844 243 60 254 -105 521 -363 588 -66 17 -178 19 -243 4 -80 -18 -172 -71 -235 -134 -60 -60 -118 -160 -131 -224 -5 -21 -13 -33 -28 -35 -162 -31 -248 -61 -358 -126 -144 -86 -298 -264 -363 -419 -15 -36 -36 -99 -48 -140 -20 -73 -21 -104 -27 -796 l-5 -720 -26 -77 c-87 -256 -290 -445 -549 -509 -80 -20 -279 -18 -360 5 -251 69 -439 248 -531 506 -23 63 -23 77 -27 475 l-3 411 54 17 c207 65 346 270 347 509 l0 67 82 42 c353 177 597 495 694 904 15 60 18 154 21 692 5 682 5 683 -55 803 -54 110 -189 218 -314 251 -37 10 -47 18 -57 45 -17 46 -93 121 -149 147 -67 31 -190 31 -249 -1 -108 -57 -173 -157 -173 -268 0 -91 24 -150 89 -215 43 -42 69 -59 115 -73 137 -43 282 11 352 130 l26 44 34 -15 c85 -35 155 -118 174 -208 8 -37 10 -230 8 -647 l-4 -595 -26 -97 c-111 -407 -402 -697 -806 -805 -84 -23 -118 -26 -257 -27 -182 -1 -262 13 -408 70 -264 105 -461 286 -586 539 -117 235 -123 284 -119 1005 l3 565 24 49 c29 59 86 116 144 145 l42 21 15 -22 c50 -75 81 -105 134 -132 148 -76 317 -25 403 121 35 60 43 167 19 241 -22 65 -85 136 -150 169 -61 31 -160 40 -221 20z m162 -222 c34 -39 31 -98 -6 -136 -40 -40 -89 -40 -133 0 -27 24 -33 36 -33 71 0 35 6 47 34 72 29 26 39 30 75 25 27 -4 49 -15 63 -32z m1199 1 c37 -37 43 -70 20 -115 -45 -87 -186 -54 -186 44 0 46 13 71 48 89 45 25 80 20 118 -18z m2372 -1706 c111 -56 166 -145 167 -270 0 -89 -25 -150 -88 -213 -60 -60 -117 -82 -212 -82 -67 0 -88 5 -131 27 -66 35 -128 106 -150 170 -22 66 -15 177 13 233 76 146 256 207 401 135z m-3232 -1055 c54 -8 140 -15 189 -15 50 0 135 7 189 15 55 8 104 15 109 15 15 0 -1 -105 -23 -153 -51 -108 -138 -167 -254 -175 -129 -8 -240 57 -291 171 -25 56 -43 157 -28 157 6 0 54 -7 109 -15z"/>
+            <path d="M4349 2981 c-68 -68 -8 -184 85 -167 48 9 81 48 81 98 0 33 -6 45 -33 69 -44 40 -93 40 -133 0z"/>
+            </g>
+            </svg>
           <h3 class="heading-6">HOSPITALS &amp;CLINICS</h3>
           <p class="paragraph-4-copy"> Find Hospitals and Clinics Nearby.</p>
         </div>
         <div id="w-node-fcffdfa0-a4a6-feef-f103-352a7caadcf2-320e3074" data-w-id="fcffdfa0-a4a6-feef-f103-352a7caadcf2"
-          style="opacity:0" class="div-block-2"><img src="static/images/65d7abbac0ff2d275d770747_3.png" loading="lazy"
-            alt="" class="image-2">
+          style="opacity:0" class="div-block-2">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="50px" height="50px" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="rgb(47, 66, 254)" stroke="none">
+            <path d="M980 4256 c-165 -35 -296 -167 -330 -333 -7 -33 -10 -188 -8 -435 3 -375 4 -384 27 -441 44 -111 143 -207 258 -250 56 -21 73 -22 522 -25 277 -2 490 1 528 7 188 29 333 171 363 357 13 77 13 691 0 768 -30 183 -173 326 -356 356 -87 15 -936 11 -1004 -4z m1056 -238 c21 -15 50 -44 64 -65 l25 -37 0 -396 0 -396 -25 -37 c-14 -21 -43 -50 -64 -65 l-39 -27 -481 -3 c-324 -2 -493 0 -518 8 -49 14 -94 53 -121 104 -22 40 -22 48 -22 416 0 365 1 376 22 415 26 49 57 79 103 99 30 13 104 15 526 13 l491 -2 39 -27z"/>
+            <path d="M3127 4260 c-174 -30 -318 -178 -347 -356 -6 -33 -10 -205 -10 -384 0 -179 4 -351 10 -384 30 -186 175 -328 363 -357 38 -6 251 -9 528 -7 449 3 466 4 522 25 115 43 214 139 258 250 24 58 24 60 24 473 0 413 0 415 -24 473 -44 111 -143 207 -258 250 -57 21 -70 22 -538 24 -264 0 -502 -3 -528 -7z m1011 -225 c47 -20 78 -50 105 -100 21 -39 22 -50 22 -415 l0 -375 -25 -45 c-14 -24 -45 -58 -68 -75 l-44 -30 -502 0 -503 0 -39 27 c-21 15 -50 44 -64 65 l-25 37 0 397 0 397 30 43 c17 23 50 53 74 66 l44 23 479 0 c409 0 484 -2 516 -15z"/>
+            <path d="M980 2336 c-166 -36 -296 -166 -330 -331 -7 -36 -10 -181 -8 -437 3 -375 4 -384 27 -441 44 -111 143 -207 258 -250 56 -21 73 -22 522 -25 277 -2 490 1 528 7 188 29 333 171 363 357 13 77 13 691 0 768 -30 183 -173 326 -356 356 -87 15 -936 11 -1004 -4z m1056 -238 c21 -15 50 -44 64 -65 l25 -37 0 -396 0 -396 -25 -37 c-14 -21 -43 -50 -64 -65 l-39 -27 -481 -3 c-324 -2 -493 0 -518 8 -49 14 -94 53 -121 104 -22 40 -22 48 -22 416 0 365 1 376 22 415 26 49 57 79 103 99 30 13 104 15 526 13 l491 -2 39 -27z"/>
+            <path d="M3127 2340 c-174 -30 -318 -178 -347 -356 -6 -33 -10 -205 -10 -384 0 -179 4 -351 10 -384 30 -186 175 -328 363 -357 38 -6 251 -9 528 -7 449 3 466 4 522 25 115 43 214 139 258 250 24 58 24 60 24 473 0 413 0 415 -24 473 -44 111 -143 207 -258 250 -57 21 -70 22 -538 24 -264 0 -502 -3 -528 -7z m1011 -225 c47 -20 78 -50 105 -100 21 -39 22 -50 22 -415 l0 -375 -25 -45 c-14 -24 -45 -58 -68 -75 l-44 -30 -502 0 -503 0 -39 27 c-21 15 -50 44 -64 65 l-25 37 0 397 0 397 30 43 c17 23 50 53 74 66 l44 23 479 0 c409 0 484 -2 516 -15z"/>
+            </g>
+            </svg>
           <h3 class="heading-9">OTHERS</h3>
           <p class="paragraph-7-copy">Find Other Services within our ecosystem.<br>
 
           </p>
         </div>
         <div id="w-node-_1b23ace6-97a5-343c-8593-b986d95d1239-320e3074" data-w-id="1b23ace6-97a5-343c-8593-b986d95d1239"
-          style="opacity:0" class="div-block-2"><img src="static/images/65d7abbafc99808d31899120_6.png" loading="lazy"
-            alt="" class="image-2">
+          style="opacity:0" class="div-block-2">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="50px" height="50px" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="rgb(47, 66, 254)" stroke="none">
+            <path d="M2351 5109 c-735 -77 -1385 -589 -1631 -1286 -175 -495 -141 -1044 94 -1515 105 -209 218 -361 399 -534 191 -184 375 -301 643 -409 170 -69 220 -99 268 -160 18 -22 105 -153 194 -291 89 -138 171 -259 183 -269 27 -26 91 -26 118 -1 12 11 83 114 158 230 75 116 156 241 180 278 53 80 120 136 205 171 238 97 296 124 384 176 196 116 398 289 534 457 617 767 565 1873 -121 2574 -419 428 -1011 641 -1608 579z m509 -214 c238 -42 522 -161 720 -302 116 -83 315 -279 395 -391 174 -241 280 -503 320 -790 23 -162 17 -408 -15 -566 -120 -607 -530 -1085 -1126 -1311 -133 -50 -232 -112 -297 -185 -23 -26 -98 -136 -167 -243 -69 -108 -127 -196 -130 -196 -3 0 -61 88 -130 196 -186 291 -248 348 -476 434 -583 218 -992 699 -1116 1311 -20 97 -23 143 -23 328 0 185 4 230 23 325 33 159 83 302 157 450 263 525 772 881 1365 954 107 14 388 5 500 -14z"/>
+            <path d="M2439 4272 c-81 -21 -154 -67 -218 -138 -85 -93 -121 -197 -121 -351 l0 -73 -113 0 c-102 0 -118 -3 -165 -26 -65 -32 -118 -93 -137 -158 -23 -75 -22 -1035 0 -1121 43 -162 186 -298 353 -334 72 -15 971 -15 1044 0 121 26 247 117 307 223 59 103 61 121 61 676 0 563 -1 572 -65 647 -19 23 -58 53 -87 67 -47 23 -63 26 -165 26 l-113 0 0 73 c0 159 -37 261 -131 361 -118 126 -280 172 -450 128z m237 -210 c96 -49 148 -150 142 -279 l-3 -68 -255 0 -255 0 -3 68 c-6 150 61 257 188 298 41 14 142 3 186 -19z m-574 -686 c3 -125 5 -136 27 -160 32 -34 72 -41 114 -21 49 23 57 49 57 190 l0 125 260 0 260 0 0 -125 c0 -141 8 -167 57 -190 42 -20 82 -13 114 21 22 24 24 35 27 160 l4 134 94 0 c149 0 135 56 132 -553 -3 -504 -3 -513 -25 -553 -30 -56 -91 -108 -150 -128 -45 -15 -105 -16 -534 -14 -450 3 -486 4 -519 22 -49 26 -98 74 -123 121 -22 39 -22 49 -25 552 -3 609 -17 553 132 553 l94 0 4 -134z"/>
+            </g>
+            </svg>
           <h3 class="heading-5">MALLS, HYPERMALLS & SUPERMARKETS.</h3>
           <p class="paragraph-3-copy-copy">Find all your favourite goodies at one stop place effortlessly.</p>
         </div>
         <div id="w-node-b9fdf55c-59d6-b6dd-e90c-c1b07ba8a2cb-320e3074" data-w-id="b9fdf55c-59d6-b6dd-e90c-c1b07ba8a2cb"
-          style="opacity:0" class="div-block-2"><img src="static/images/65d7abbac0ff2d275d770747_3.png" loading="lazy"
-            alt="" class="image-2">
+          style="opacity:0" class="div-block-2">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="50px" height="50px" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="rgb(47, 66, 254)" stroke="none">
+            <path d="M1750 4294 c-437 -211 -882 -427 -988 -479 l-192 -94 2 -338 3 -338 1985 0 1985 0 3 337 2 338 -121 61 c-67 33 -246 120 -398 193 -152 73 -542 262 -868 420 -325 157 -598 286 -605 285 -7 0 -371 -173 -808 -385z m918 130 c13 -15 22 -38 22 -57 0 -29 5 -34 55 -56 99 -43 175 -152 175 -252 0 -66 -47 -111 -97 -93 -31 10 -48 38 -63 102 -6 23 -24 57 -40 75 l-29 32 -1 -156 0 -155 57 -24 c79 -33 147 -102 167 -171 49 -165 -18 -317 -164 -370 -45 -16 -60 -26 -60 -41 0 -24 -18 -59 -39 -75 -47 -36 -131 6 -131 65 0 27 -4 30 -52 41 -67 14 -144 50 -185 85 -40 33 -93 138 -93 183 0 59 57 91 111 62 11 -5 30 -34 43 -63 25 -56 68 -95 125 -115 19 -6 38 -11 43 -11 5 0 7 68 6 152 l-3 152 -38 8 c-191 40 -304 244 -228 415 39 87 134 160 236 179 31 5 35 10 35 36 0 20 10 40 30 60 26 25 36 29 63 24 18 -3 42 -17 55 -32z"/>
+            <path d="M2475 4176 c-65 -28 -105 -106 -90 -175 9 -41 92 -111 131 -111 2 0 4 68 4 150 0 83 -3 150 -7 150 -5 -1 -22 -7 -38 -14z"/>
+            <path d="M2690 3571 c0 -148 5 -157 60 -94 30 33 32 41 28 90 -5 56 -26 94 -66 121 l-22 14 0 -131z"/>
+            <path d="M850 1875 l0 -985 -185 0 -185 0 2 -227 3 -228 2075 0 2075 0 3 228 2 227 -185 0 -185 0 0 985 0 985 -220 0 -220 0 0 -985 0 -985 -280 0 -280 0 0 985 0 985 -215 0 -215 0 0 -985 0 -985 -280 0 -280 0 0 985 0 985 -215 0 -215 0 0 -985 0 -985 -280 0 -280 0 0 985 0 985 -220 0 -220 0 0 -985z"/>
+            </g>
+            </svg>
           <h3 class="heading-8">FINANCIAL INSTITUTIONS.</h3>
           <p class="paragraph-7-copy">Find the Nearest Financial Institution and avoid unnecessary travel fares by
             simpily accessing our software that uses high precision to solve all your needs.</p>
@@ -282,7 +323,8 @@
     <div class="socials-container">
       <h2 class="team-heading">JOIN OUR COMMUNITY</h2>
       <div class="grid-4">
-        <div data-w-id="7b2969bb-367f-c7d2-b045-bcf5a60e7bd4" style="opacity:0" class="div-block-8-copy"><img
+        <div data-w-id="7b2969bb-367f-c7d2-b045-bcf5a60e7bd4" style="opacity:0" class="div-block-8-copy">
+          <img
             src="static/images/661022ff429cda336944fb8e_Untitled.png" loading="lazy" width="33" alt="" class="logo">
           <h3 class="heading-18">Join our Telegram</h3>
           <a href="#" target="_blank" class="button-2 w-button">JOIN US </a>
@@ -304,7 +346,7 @@
               <defs>
               </defs>
               <svg>
-                <g class="inbug" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g class="inbug" stroke="none" stroke-width="1" fill="#0000ff" fill-rule="evenodd">
                   <path
                     d="M19.479,0 L1.583,0 C0.727,0 0,0.677 0,1.511 L0,19.488 C0,20.323 0.477,21 1.333,21 L19.229,21 C20.086,21 21,20.323 21,19.488 L21,1.511 C21,0.677 20.336,0 19.479,0"
                     class="bug-text-color" transform="translate(63.000000, 0.000000)"></path>
@@ -320,9 +362,7 @@
     </div>
   </section>
   <section id="footer" class="footer">
-
   </section>
-  <script defer="" src="{% static 'js/copyclip.js' %}"></script>
   <script src="{% static  'js/jquery-3.5.1.min.dc5e7f18c8.js' %}" type="text/javascript"
     crossorigin="anonymous"></script>
   <script src="{% static 'js/webflow.8b75e9a1b.js' %}" type="text/javascript"></script>
