@@ -17,14 +17,20 @@ def fetch_parking_data(request):
 
 def home(request):
     return render(request, 'SmartRoute/index.html')
-def map_view(request):
-    return render(request, 'SmartRoute/mosque.html')
-def mosque_map(request):
-    return render(request, 'SmartRoute/mosque.html')
-def videoStart(request):
-    return render(request, 'SmartRoute/videoStart.html')
-
-
+# def map_view(request):
+#     return render(request, 'SmartRoute/mosque.html')
+# def mosque_map(request):
+#     return render(request, 'SmartRoute/mosque.html')
+# def worship_places(request):
+#     return render(request, 'SmartRoute/worship_places.html')
+# def tourist(request):
+#     return render(request, 'SmartRoute/tourist.html')
+# def shopping(request):
+#     return render(request, 'SmartRoute/shopping.html')
+# def event(request):
+#     return render(request, 'SmartRoute/event.html')
+# def bookparking(request):
+#     return render(request, 'SmartRoute/bookparking.html')
 
 openai.api_key = "1SL5yj5wgPaivYPNfqgpuVmI8wBnKD57LBgBm4uHq6uexs4cs8cJJQQJ99AKACF24PCXJ3w3AAAAACOGaSsv"  # Replace with your Azure AI Key
 openai.api_base = "https://amone-patrick.openai.azure.com/"

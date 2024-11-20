@@ -1,81 +1,134 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parking Map</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="{% static 'css/map.css' %}">
 </head>
-<body>
-    <h1>Book Parking Slot</h1>
 
-    <p> Please not that </p> 
-    <ol>
-        <li> For Free parking pulic places, Your booking will be valid for only 30 Mins from Booking time. </li>
-        <li> For Paid Parking you need to pay before booking, standard charges applies </li>
-    </ol>
+<body>
+    <section id="header" class="header">
+        <div class="header-container"><a href="{% url 'home' %}" target="_self" aria-current="page"
+                class="link-block-2 w-inline-block w--current"><img src="static/images/logo.png" loading="lazy"
+                    width="33" sizes="(max-width: 479px) 28vw, 38px" alt=""
+                    srcset="{% static 'images/logo.png' %} 500w, {% static 'images/logo.png' %} 800w, {% static 'images/logo.png' %} 1080w, {% static 'images/logo.png' %} 1600w"
+                    class="logo">
+                <h1 class="heading-14">LigeGuide</h1>
+            </a>
+            <div class="w-layout-hflex flex-block-3">
+                <a href="{% url 'home' %}" target="_self"
+                    class="link-block w-inline-block">
+                    <p class="paragraph-11">HOME</p>
+                </a>
+                <a href="{% url 'recommend_worship_church' %}" target="_self" class="link-block w-inline-block">
+                    <p class="paragraph-11">WORSHIP PLACES</p>
+                </a><a href="{% url 'recommend_shopping_places' %}" target="_self" class="link-block w-inline-block">
+                    <p class="paragraph-11">SHOP</p>
+                </a><a href="{% url 'recommend_tourist_sites' %}" target="_self" class="link-block w-inline-block">
+                    <p class="paragraph-11">TOUR</p>
+                </a>
+                <a href="{% url 'event' %}" target="_self" class="link-block w-inline-block">
+                    <p class="paragraph-11">EVENTS</p>
+                </a>
+            </div>
+
+            <div class="div-block-13">
+                <img src="{% static 'images/menu.png' %}" loading="lazy"
+                    data-w-id="75d1cb73-5482-a4b1-c633-58b165bf6f53" alt="" class="image-8">
+                <div class="w-layout-hflex mobile-menu"><a href="#" class="link-block w-inline-block">
+                        <p class="paragraph-11">HOME</p>
+                    </a><a href="{% url 'recommend_worship_church' %}" target="_self" class="link-block w-inline-block">
+                        <p class="paragraph-11">Worship Places</p>
+                    </a><a href="{% url 'recommend_shopping_places' %}" target="_self"
+                        class="link-block w-inline-block">
+                        <p class="paragraph-11">SHOP</p>
+                    </a><a href="{% url 'recommend_tourist_sites' %}" target="_self" class="link-block w-inline-block">
+                        <p class="paragraph-11">TOUR</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="note">
+        <p> Please not that </p>
+        <ol>
+            <li> For Free parking pulic places, Your booking will be valid for only 30 Mins from Booking time. </li>
+            <li> For Paid Parking you need to pay before booking, standard charges applies </li>
+        </ol>
+    </div>
 
     <!-- Add CSRF Token -->
     <form method="post" style="display: none;">
         {% csrf_token %}
     </form>
 
-    <div id="map" style="height: 100vh;"></div>
+    <div class="container">
+        <!-- Left Panel: Map -->
+        <div class="map-container2">
+            <div id="map" class="map"></div>
+        </div>
 
-    <script>
-        var map = L.map('map').setView([24.133221, 55.695977], 13);  // Center the map to the first spot
+        <script>
+            var map = L.map('map').setView([24.133221, 55.695977], 13);  // Center the map to the first spot
 
-        // Add a tile layer to the map (OpenStreetMap in this case)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Add markers for each parking spot
-        var spots = {{ spots|safe }};
-
-        spots.forEach(function(spot) {
-            var color = spot.booked ? 'red' : 'green';  // Red if booked, green if available
-
-            // Add a circle marker
-            var marker = L.circleMarker([spot.latitude, spot.longitude], {
-                radius: 8, // Size of the circle
-                fillColor: color, // Fill color
-                color: 'white', // Border color
-                weight: 2, // Border width
-                opacity: 1,
-                fillOpacity: 0.5 // Fill opacity
+            // Add a tile layer to the map (OpenStreetMap in this case)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
-            var popupContent = `
-                <b>Spot ${spot.spot_id}</b><br>
-                Latitude: ${spot.latitude}<br>
-                Longitude: ${spot.longitude}<br>
-                <button onclick="bookSpot(${spot.spot_id})" ${spot.booked ? 'disabled' : ''}>Book Spot</button>
-            `;
-            marker.bindPopup(popupContent);
-        });
+            // Add markers for each parking spot
+            var spots = {{ spots| safe }};
 
-        // Function to handle booking a spot
-        function bookSpot(spotId) {
-            // Send a POST request to book the spot
-            fetch(`http://127.0.0.1:8000/book_parking_spot/${spotId}/`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
-                },
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Parking spot booked successfully!');
-                    location.reload();  // Reload the page to reflect the booking
-                } else {
-                    alert('Error booking the spot!');
-                }
+            spots.forEach(function (spot) {
+                var color = spot.booked ? 'red' : 'green';  // Red if booked, green if available
+
+                // Add a circle marker
+                var marker = L.circleMarker([spot.latitude, spot.longitude], {
+                    radius: 8, // Size of the circle
+                    fillColor: color, // Fill color
+                    color: 'white', // Border color
+                    weight: 2, // Border width
+                    opacity: 1,
+                    fillOpacity: 0.5 // Fill opacity
+                }).addTo(map);
+
+                var popupContent = `
+                <b>Spot   :     ${spot.spot_id}</b><br>
+                <b>Latitude  :     ${spot.latitude}</b><br>
+                <b>Longitude :     ${spot.longitude}</b><br><br>
+                <button onclick="bookSpot(${spot.spot_id})" ${spot.booked ? 'disabled' : ''}>Book</button>
+            `;
+                marker.bindPopup(popupContent);
             });
-        }
-    </script>
+
+            // Function to handle booking a spot
+            function bookSpot(spotId) {
+                // Send a POST request to book the spot
+                fetch(`http://127.0.0.1:8000/book_parking_spot/${spotId}/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    },
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Parking spot booked successfully!');
+                            location.reload();  // Reload the page to reflect the booking
+                        } else {
+                            alert('Error booking the spot!');
+                        }
+                    });
+            }
+        </script>
 </body>
+
 </html>
