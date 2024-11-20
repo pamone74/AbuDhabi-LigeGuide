@@ -44,22 +44,6 @@ b{
     justify-content: space-between;
 }
 
-input[type="text"]{
-    width: 80%;
-    margin-left: 20px;
-    padding: 2px;
-    border-radius: 8px;
-    border: 1px solid #0056b3;
-}
-
-button[type="submit"]{
-    width: 50%;
-    padding: 2px;
-    margin-left: 20px;
-    border-radius: 8px;
-    border: 1px solid #0056b3;
-}
-
 .map-container2 {
     flex: 4;
     margin-right: 15px;
@@ -68,7 +52,7 @@ button[type="submit"]{
     margin-top: 0.5%;
     margin-left: 0.1%;
     padding: 10px;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #3d3b3b;
 }
 
 .map {
