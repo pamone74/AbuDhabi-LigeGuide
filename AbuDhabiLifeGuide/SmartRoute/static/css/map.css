@@ -26,7 +26,8 @@ h1 {
     justify-content: center;
     margin-top: 20px;
     padding: 10px;
-    z-index: -1;
+    width: 100%;
+    z-index: 1;
     position: relative;
     background-color: rgba(255, 255, 255, 0.5);
 }
@@ -36,6 +37,27 @@ b{
     align-items: center;
     text-align: center;
     color: #3a3838;
+}
+
+.form2{
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="text"]{
+    width: 80%;
+    margin-left: 20px;
+    padding: 2px;
+    border-radius: 8px;
+    border: 1px solid #0056b3;
+}
+
+button[type="submit"]{
+    width: 50%;
+    padding: 2px;
+    margin-left: 20px;
+    border-radius: 8px;
+    border: 1px solid #0056b3;
 }
 
 .map-container2 {
