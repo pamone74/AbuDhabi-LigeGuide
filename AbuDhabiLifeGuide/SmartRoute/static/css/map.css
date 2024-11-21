@@ -21,7 +21,7 @@ h1 {
 }
 
 #map{
-    cursor: pointer !important;
+    cursor: pointer;
 }
 
 .note{
