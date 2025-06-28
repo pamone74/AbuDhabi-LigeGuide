@@ -34,3 +34,35 @@ The platform aims to bridge the gap between **open government data** and **citiz
 
 ## 🏗️ Architecture Overview
 
+---
+
+python -m venv env
+source env/bin/activate  # On Windows: env\Scripts\activate
+pip install -r requirements.txt
+
+python manage.py migrate
+python manage.py runserver
+
+http://127.0.0.1:8000/
+
+
+## 🧰 Tech Stack
+
+| Component          | Technology Used                  |
+|--------------------|----------------------------------|
+| 🖥 Frontend         | HTML, CSS, JavaScript, Leaflet.js |
+| ⚙️ Backend          | Django, Django REST Framework     |
+| 🧠 AI/ML            | Python, scikit-learn, pandas      |
+| 🌐 Data Ingestion   | REST APIs, CSV Parsers            |
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-org/abudhabi-lifeguide.git
+cd abudhabi-lifeguide
+
+
+
