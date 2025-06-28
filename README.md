@@ -35,17 +35,6 @@ The platform aims to bridge the gap between **open government data** and **citiz
 ## 🏗️ Architecture Overview
 
 ---
-
-python -m venv env
-source env/bin/activate  # On Windows: env\Scripts\activate
-pip install -r requirements.txt
-
-python manage.py migrate
-python manage.py runserver
-
-http://127.0.0.1:8000/
-
-
 ## 🧰 Tech Stack
 
 | Component          | Technology Used                  |
@@ -64,5 +53,13 @@ http://127.0.0.1:8000/
 git clone https://github.com/your-org/abudhabi-lifeguide.git
 cd abudhabi-lifeguide
 
+python -m venv env
+source env/bin/activate  # On Windows: env\Scripts\activate
+pip install -r requirements.txt
+
+python manage.py migrate
+python manage.py runserver
+
+http://127.0.0.1:8000/
 
 
